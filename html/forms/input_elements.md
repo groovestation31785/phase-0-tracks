@@ -1,26 +1,33 @@
 # Form Types
 
 <form></form>
-	* action method
-	* name
+* action method
+* name
+    A default tag for getting user input
 
 <fieldset></fieldset>
-	* <div></div>	
+* <div></div>
+	Groups elements of the form
 	
 <input></input>
-	* placeholder
-	* value
-	* type
+* placeholder
+* value
+* type
+	The field for the user's infomation
 
 <label></label>
+	Inline element for the type of input
 
 <select></select>
-	* name
-	* <option></option>
-		* value
+* name
+	Creates dropdown list
+* <option></option>
+	* value
+		An element of the select tag that gives multiple values
 
 <button></button>
-	* type
+* type
+	Sends the input data to the server and logs it
 
 
 
