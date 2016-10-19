@@ -1,5 +1,5 @@
 body {
-  width: 960px;
+  max-width: 960px;
 }
 
 
@@ -37,7 +37,7 @@ figcaption {
 }
 
 #external-links {
-  width: 200px;
+  width: 20%;
   display: inline-block;
   vertical-align: top;
   
@@ -45,6 +45,12 @@ figcaption {
 }
 
 main {
-  width: 756px;
+  width: 70%;
   display: inline-block;
 }
+
+/* @media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+} */
