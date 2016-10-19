@@ -1,21 +1,25 @@
-#hat {
-	position:relative;
-	top: 100px;
-	left: 40%;
+#container {
+	
+}
+
+.octopus {
+	display: block;
+	margin: 0 auto;
+	
+	padding-top: 50px;
+	z-index: 1;
+}
+
+.hat {
+	position: relative;
+	margin: 0 auto;
 	z-index: 2;
 }
 
 
-#glasses {
-	position: absolute;
-	top: 275px;
-	left: 45%;
+.glasses {
+	position: relative;
 	margin: 0 auto;
 	z-index: 3;
 }
 
-#octopus {
-	display: block;
-	margin: 0 auto;
-	z-index: 1;
-}
