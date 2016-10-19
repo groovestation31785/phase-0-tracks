@@ -1,5 +1,7 @@
 body {
   max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -49,8 +51,20 @@ main {
   display: inline-block;
 }
 
+@media screen and (max-height: 500px) {
+  a {
+    font-style: italic;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  h1 {
+    font-size: 15px;
+  }
+}
+
 /* @media screen and (max-width: 500px) {
   body {
     background-color: hotpink;
   }
-} */
+}
