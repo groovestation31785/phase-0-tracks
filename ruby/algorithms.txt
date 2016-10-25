@@ -35,37 +35,37 @@ Algorithm for Using an Elevator
 						-If the floor number is less than 3:
 							-Press the matching number from the bottom row of buttons
 						-While dividing by 3
-							-If the floor number has a modulo equal to 1
+							-If the floor number has a modulo equal to 1:
 								-Search the left column
-							-If the floor number has a modulo equal to 2
+							-If the floor number has a modulo equal to 2:
 								-Search the middle column
-							-If the floor number has a modulo equal to 0
+							-If the floor number has a modulo equal to 0:
 								-Search the right column
 					-For a panel with four columns:
 						-If the floor number is less than 4:
 							-Press the matching number from the bottom row of buttons
-						-While dividing by 4
-							-If the floor number has a modulo equal to 1
+						-While dividing by 4:
+							-If the floor number has a modulo equal to 1:
 								-Search the first column
-							-If the floor number has a modulo equal to 2
+							-If the floor number has a modulo equal to 2:
 								-Search the second column
-							-If the floor number has a modulo equal to 3
+							-If the floor number has a modulo equal to 3:
 								-Search the third column
-							-If the floor number has a modulo equal to 0
+							-If the floor number has a modulo equal to 0:
 								-Search the fourth column
 					-For a panel with five columns:
 						-If the floor number is less than 5:
 							-Press the matching number from the bottom row of buttons
-						-While dividing by 5
-							-If the floor number has a modulo equal to 1
+						-While dividing by 5:
+							-If the floor number has a modulo equal to 1:
 								-Search the first column
-							-If the floor number has a modulo equal to 2
+							-If the floor number has a modulo equal to 2:
 								-Search the second column
-							-If the floor number has a modulo equal to 3
+							-If the floor number has a modulo equal to 3:
 								-Search the third column
-							-If the floor number has a modulo equal to 4
+							-If the floor number has a modulo equal to 4:
 								-Search the fourth column
-							-If the floor number has a modulo equal to 5
+							-If the floor number has a modulo equal to 5:
 								-Search the fifth column
 					-For a panel with six columns:
 						-Since you are located in a building that is extremely large:
@@ -87,3 +87,35 @@ Algorithm for Using an Elevator
 	-Notity your human of any malfeasance.
 	-Initiate the "Return Home" sequence
 
+
+
+
+
+Algorithm for Checking a Notification on the Cell Phone
+
+For any light or pop-up notification on my phone:
+	-Awaken the phone's screen:
+		-If the screen is already awoken:
+			-Continue to the next step
+		-Otherwise:
+			-Press the home button
+	-Open the phone's lock screen
+		-If the screen has been asleep for less than 5 minutes:
+			-Swipe across the screen to unlock
+		-Otherwise:
+			-Type the password
+			-Press Enter
+	-Swipe down from the top of the home screen
+	-Click on the notification that I'd like to read
+	-Wait for message to load
+	-Read the message
+	-If I have more than one notification to read:
+		-Repeat all the steps from "Swipe down"
+	-Otherwise:
+		-Press the button to the left of the home button
+		-While I have active applications:
+			-Swipe to the right to close them
+	-Press the home button
+	-Press the lock button on the upper righthand side.
+	
+	
