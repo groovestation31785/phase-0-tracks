@@ -1,0 +1,89 @@
+Algorithm for Using an Elevator
+
+-Starting position should be in front of the elevator doors.
+	-There will be a small panel with two bottoms. One has an arrow point up, the other down. If the destination is upward:
+		-Push the bottom with the up arrow.
+		-Otherwise push the downward arrow.
+	-If the elevator has arrived with open doors:
+		-Enter the elevator.
+	-Otherwise:
+		-Continue to wait for elevator doors to open.
+
+-Once inside the elevator:
+	-Find a panel with a combination of numbered and lettered buttons.
+	-Determine the floor that has the destination:
+		-For traveling to the main floor:
+			-Find the button with a star next to the number or letter.
+			-Push it so that it lights up.
+			-Wait for the doors to close and for the elevator to move.
+			-If the doors open:
+				-Determine if you have arrived at the destination by reading the elevator's current location above the elevator doors.
+					-If it indicates you are on the main floor:
+						-Leave the elevator
+					-Otherwise:
+						-Verify that the button is still illuminated:
+							-If it is not illuminated:
+								-Press it again.
+								-Wait for the elevator to continue moving.
+						-Wait for the doors to close and for the elevator to move.
+		-For traveling to any other floor in the building:
+			-Find the button of the floor with the destination:
+				-Start the search at the bottom of the panel:
+					-For a panel with two columns:
+						-Search the left column for an odd-numbered floor and right for an even-numbered floor
+					-For a panel with three columns:
+						-If the floor number is less than 3:
+							-Press the matching number from the bottom row of buttons
+						-While dividing by 3
+							-If the floor number has a modulo equal to 1
+								-Search the left column
+							-If the floor number has a modulo equal to 2
+								-Search the middle column
+							-If the floor number has a modulo equal to 0
+								-Search the right column
+					-For a panel with four columns:
+						-If the floor number is less than 4:
+							-Press the matching number from the bottom row of buttons
+						-While dividing by 4
+							-If the floor number has a modulo equal to 1
+								-Search the first column
+							-If the floor number has a modulo equal to 2
+								-Search the second column
+							-If the floor number has a modulo equal to 3
+								-Search the third column
+							-If the floor number has a modulo equal to 0
+								-Search the fourth column
+					-For a panel with five columns:
+						-If the floor number is less than 5:
+							-Press the matching number from the bottom row of buttons
+						-While dividing by 5
+							-If the floor number has a modulo equal to 1
+								-Search the first column
+							-If the floor number has a modulo equal to 2
+								-Search the second column
+							-If the floor number has a modulo equal to 3
+								-Search the third column
+							-If the floor number has a modulo equal to 4
+								-Search the fourth column
+							-If the floor number has a modulo equal to 5
+								-Search the fifth column
+					-For a panel with six columns:
+						-Since you are located in a building that is extremely large:
+							-Notify your human that you need assistance.
+							-Never maneuver through a building of this size without your human counterpart.
+			-When the floor button has been found:
+				-Press the button so that it is illuminated.
+				-Wait for the elevator doors to close and for it to move.
+				-If the doors open:
+					-Determine if you have arrived at the destination by reading the elevator's current location above the elevator doors.
+						-If it indicates you have arrived at the correct:
+							-Leave the elevator
+						-Otherwise:
+							-Verify that the button is still illuminated:
+								-If it is not illuminated:
+									-Press it again.
+									-Wait for the elevator to continue moving.
+-If you are completely lost and have created a disruption in the building:
+	-Notity your human of any malfeasance.
+	-Initiate the "Return Home" sequence
+
