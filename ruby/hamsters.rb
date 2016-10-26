@@ -10,7 +10,7 @@ puts "What color of hamster do you want?"
 hamcol = gets.chomp
 puts "A #{hamcol} hamster"
 
-puts "Is the hamster a good candidate for adoption?"
+puts "Is the hamster a good or bad candidate for adoption?"
 adopt = gets.chomp
 puts "So the hamster is a #{adopt} candidate."
 
