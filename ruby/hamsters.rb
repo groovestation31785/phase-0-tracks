@@ -21,7 +21,7 @@ age = gets.chomp
 if age = ""
 	age = nil
 	puts "You aren't sure of the age?"
-elsif age = age.to_i
+else age = age.to_i
 	puts "OK. The hamster is #{age} years old."
 	age = age.to_i
 end
