@@ -1,13 +1,37 @@
-puts "What's your name?"
-name = gets.chomp
+puts "How many employees will be processed?"
+num_empl = gets.chomp.to_i
 
-puts "How old are you? What year were you born?"
-age = gets.chomp
+until num_empl == 0
 
-puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-bread = gets.chomp
+	puts "What's your name?"
+	name = gets.chomp
 
-puts "Would you like to enroll in the company's health insurance?"
-insurance = gets.chomp
+	puts "How old are you?"
+	given_age = gets.chomp.to_i
+
+	puts "What year were you born?"
+	birth_year = gets.chomp.to_i
+
+	accurate_age = 2016 - birth_year
+
+	puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
+	bread = gets.chomp
+
+	puts "Would you like to enroll in the company's health insurance? (y/n)"
+	insurance = gets.chomp
 
 
+	if name == "Drake Cula" || name =="Tu Fang"
+		puts "Definitely a vampire."
+	elsif (accurate_age != given_age) && (bread == "n") && (insurance == "n")
+		puts "Almost certainly a vampire"
+	elsif (accurate_age != given_age) && (bread == "n" || insurance == "n")
+		puts "Probably a vampire"
+	elsif (accurate_age == given_age) && (bread == "y" || insurance == "y")
+		puts "Probably not a vampire"
+	else
+		puts "Results inconclusive."
+	end
+
+	num_empl -= 1	
+end
