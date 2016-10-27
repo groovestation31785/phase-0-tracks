@@ -20,7 +20,25 @@ def encrypt(str)
 	end
 end
 
+
+
+def decrypt(str)
+	
+	index = -1
+	str_leng = str.length
+
+
+	while index < str_leng
+		print str[index].next
+	index += 1
+
+	end
+end
+
 puts "Type a word"
 string = gets.chomp
 
 print encrypt(string)
+
+
+print decrypt(string)
