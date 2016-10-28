@@ -2,8 +2,11 @@
 ENCRYPT PSEUDOCODE
 -Ask the user to type a password
 	-Cycle through each letter of the password
-	Until the index number reaches nil:
-		Use the next method to get the next letter
+		-Use the .next method to change that character to the next letter
+		-For any space characters:
+			-Detect if there are any spaces:
+				-Put a space character instead of implementing the .next method
+		-Do these steps for every letter character until you get to the end.
 
 =end
 
@@ -38,7 +41,6 @@ Ask the user to type a password:
 
 =end
 
-
 def decrypt(str)
  password = str
  something = 0
@@ -58,19 +60,31 @@ def decrypt(str)
  puts password
 end
 
-# Driver code
-# decrypt(encrypt("swordfish"))      # Encrypt runs the string and returns a new string
-                                  # Decrypt uses the encrypted string as an argument
-                                  # and decrypts to a new string
+# decrypt(encrypt("swordfish"))      
+
+
+
+# RELEASE 4:
+# Encrypt runs the string and returns a new string
+# Decrypt uses the encrypted string as an argument
+# and decrypts to a new string
+
 
 
 =begin
- Ask the user if they want their password encrypted or decrpyted.
-   If they answer "encrypted" ask for password and run encrypt method
-   Or they answer "decrypted" ask for password and run decrypt method
-   Otherwise tell them invalid repsonse and ask first question again
+RELEASE 5 PSEUDOCODE
+ -Ask the user if they want their password encrypted or decrpyted:
+   -If they answer "encrypted":
+   		-Ask for password
+   		-Run encrypt method
+   -Or if they answer "decrypted":
+   		-Ask for password
+   		-Run decrypt method
+   -Otherwise:
+   		-Tell them invalid repsonse 
+   		-Ask the question again
 
-   Print the password
+  - Print the password
 =end
 
 puts "Would you like to decrypt or encrypt your password"
