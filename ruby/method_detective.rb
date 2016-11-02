@@ -9,8 +9,10 @@
 "SpOoKy HaLLowEEn!".swapcase
 
 
-# "zom".<???>
+"zom".insert(1, "o")
+"zom".replace("zoom")
 # => “zoom”
+"I can change anything!".insert(1, "t")
 
 
 "enhance".center(15)
@@ -39,8 +41,13 @@
 "I did it because I was hungry".chop
 
 
-# "The mystery of the missing first letter".<???>
+missing = "The mystery of the missing first letter"
+missing.slice!(0)
+missing
 # => "he mystery of the missing first letter"
+spooky = "My 'm' is gone!!"
+spooky.slice!(0)
+spooky
 
 
 "Elementary,    my   dear        Watson!".squeeze
@@ -55,4 +62,4 @@
 
 "How many times does the letter 'a' appear in this string?".count("a")
 # => 4
-"Gadsby is a lipogrammatic work containing 50,110 words without any 'e'.".count("e")
+"'Gadsby' is a lipogrammatic work containing 50,110 words without any 'e'.".count("e")
