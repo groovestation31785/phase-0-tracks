@@ -14,7 +14,7 @@ end
 p search_array(arr, 145)
 
 #Release 1
-def FibSeq(n)
+def fib_seq(n)
 
 	array = [0]
 	n.times do |i|
@@ -30,7 +30,7 @@ def FibSeq(n)
 end
 
 
-print FibSeq(10)
+p fib_seq(10)
 
 #Release 2
 #Implement the bubble sort method
@@ -43,4 +43,23 @@ print FibSeq(10)
 #Otherwise, continue to the third and fourth number
 #Continue making these comparisons until all of the numbers have been sorted into ascending order.
 
+
+def bubble_sort(arr)
+	x = arr.length
+	loop do
+		swapped = false
+		(x - 1).times do |i|
+			if arr[i] > arr[i + 1]
+				arr[i], arr[i + 1] = arr[i + 1], arr[i]
+				swapped = true
+			end
+		end
+
+		break if not swapped
+	end
+
+	arr
+end
+
+p bubble_sort([3, 6, 5, 7, 4, 2, 1])
 
