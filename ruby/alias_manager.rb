@@ -1,3 +1,20 @@
+=begin
+RELEASE 0
+Receive the name that must be changed
+Make all letters lowercase and split the names apart so they are individual letters
+Make a list of all the vowels and all of the consonants
+Loop through all of the letters to find the vowels:
+  When the program finds a vowel:
+    Replace that vowel with the next vowel in the list
+  Otherwise, do not change the letter
+Do the same thing with the consonants:
+   Loop through all of the letters to find the consonants:
+  When the program finds a consonants:
+    Replace that consonant with the next consonant in the list
+  Otherwise, do not change the letterS
+After all letters have changed, swap the names and capitalize them.
+
+=end
 
 def change_vowel(name)
   vowels = ["a", "e", "i", "o", "u"]
@@ -12,8 +29,6 @@ def change_vowel(name)
   end
   new_name.join
 end
-
-#p change_vowel("Felicia Torres")
 
 
 
@@ -46,5 +61,7 @@ p change_cons(change_vowel("Alicia Florrezs"))
 p swap_names(change_cons(change_vowel("Alicia Florrezs")))
 
 
+# CREATE USER EXPERIENCE
 
+# USE HASH TO STORE INFO
 
