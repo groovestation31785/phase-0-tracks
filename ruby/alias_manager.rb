@@ -56,12 +56,26 @@ def swap_names(name)
 end
 
 
-p change_vowel("Alicia Florrezs")
-p change_cons(change_vowel("Alicia Florrezs"))
-p swap_names(change_cons(change_vowel("Alicia Florrezs")))
+# p change_vowel("Alicia Florrezs")
+# p change_cons(change_vowel("Alicia Florrezs"))
+# p swap_names(change_cons(change_vowel("Alicia Florrezs")))
 
 
-# CREATE USER EXPERIENCE
+# RELEASE 1
+puts "Hello, agent. Let's give you an alias for your mission. Type in your first and last name."
+agent_name = gets.chomp
+
+p swap_names(change_cons(change_vowel(agent_name)))
+
+puts "Would you like to create another alias? If so, type in the name. If not, type 'quit'."
+another_alias = gets.chomp
+
+until another_alias == "quit"
+  p swap_names(change_cons(change_vowel(another_alias)))
+  puts "Create another one? Type the name if yes; otherwise type 'quit'."
+  another_alias = gets.chomp
+end
+
 
 # USE HASH TO STORE INFO
 
