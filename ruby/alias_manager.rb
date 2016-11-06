@@ -30,7 +30,7 @@ def change_vowel(name)
   new_name.join
 end
 
-
+# p change_vowel("Alicia Florrezs")
 
 def change_cons(name)
   consonants = ("bcdfghjklmnpqrstvwxyz").chars
@@ -46,7 +46,7 @@ def change_cons(name)
   new_name.join  
 end
 
-
+# p change_cons(change_vowel("Alicia Florrezs"))
 
 def swap_names(name)
   fullname_array = name.split
@@ -56,26 +56,33 @@ def swap_names(name)
 end
 
 
-# p change_vowel("Alicia Florrezs")
-# p change_cons(change_vowel("Alicia Florrezs"))
 # p swap_names(change_cons(change_vowel("Alicia Florrezs")))
 
+
+list_agent_alias = {}
 
 # RELEASE 1
 puts "Hello, agent. Let's give you an alias for your mission. Type in your first and last name."
 agent_name = gets.chomp
 
-p swap_names(change_cons(change_vowel(agent_name)))
+alias_name = swap_names(change_cons(change_vowel(agent_name)))
+list_agent_alias[agent_name] = alias_name
+
 
 puts "Would you like to create another alias? If so, type in the name. If not, type 'quit'."
-another_alias = gets.chomp
+agent_name = gets.chomp
 
-until another_alias == "quit"
-  p swap_names(change_cons(change_vowel(another_alias)))
+
+until agent_name == "quit"
+  alias_name = swap_names(change_cons(change_vowel(agent_name)))
+  list_agent_alias[agent_name] = alias_name
   puts "Create another one? Type the name if yes; otherwise type 'quit'."
-  another_alias = gets.chomp
+  agent_name = gets.chomp
 end
 
 
-# USE HASH TO STORE INFO
+# RELEASE 2 
 
+list_agent_alias.each do |name, fake|
+  puts "#{fake} is an alias for Agent #{name}."
+end
