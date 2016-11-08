@@ -1,5 +1,6 @@
 class Santa
-
+	attr_reader :age, :ethnicity #getter methods
+	attr_accessor :gender #setter method
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -26,29 +27,23 @@ class Santa
 		reindeer_ranking.delete_if { |culprit| culprit == reindeer}
 		new_reindeer_ranking = reindeer_ranking.push(reindeer)
 	end
-
-	def age 
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+ 
 
 end
 
 nikolas = Santa.new("sissy-boy", "Caucasian")
-#nikolas.speak
-#nikolas.eat_milk_and_cookies("chocolate chip") 
+nikolas.speak
+nikolas.eat_milk_and_cookies("chocolate chip") 
 
-#kris_kringle = Santa.new("male", "Scandanavian")
-#claus = Santa.new("transgender", "German")
+kris_kringle = Santa.new("muscle-man", "Scandanavian")
+claus = Santa.new("transgender", "feline-identified")
 
-p nikolas.celebrate_birthday(1746)
-p nikolas.get_mad_at("Prancer")
+nikolas.celebrate_birthday(1746)
+p nikolas.get_mad_at("Dasher")
 
+puts "I am ol' Kris Kringle. I'm a #{kris_kringle.ethnicity}."
+kris_kringle.gender = "beefcake"
+
+
+puts "I've gain a lot of mass so I can identify as a #{kris_kringle.gender}."
 
