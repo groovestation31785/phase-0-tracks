@@ -1,6 +1,6 @@
 class Santa
-	attr_reader :age, :ethnicity #getter methods
-	attr_accessor :gender #setter method
+	attr_reader :age, :ethnicity # refractored from getter methods
+	attr_accessor :gender # refractored from setter method
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -28,7 +28,24 @@ class Santa
 		reindeer_ranking.delete_if { |culprit| culprit == reindeer}
 		new_reindeer_ranking = reindeer_ranking.push(reindeer)
 	end
- 
+
+# GETTER METHODS 
+#	def gender
+#		@gender
+#	end
+
+#	def ethnicity
+#		@ethnicity
+#	end
+
+#	def age
+#		@age = age
+#	end
+
+# SETTER METHOD
+#	def gender=(new_gender)
+#		@gender = new_gender
+#	end
 
 end
 
