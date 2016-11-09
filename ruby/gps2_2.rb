@@ -7,7 +7,22 @@
   	# Use the items given to put into our blank list
   # set default quantity to one each
   # print the list to the console [can you use one of your other methods here?]
-# output: array
+# output: hash
+
+
+
+def create_list(item)
+	grocery_list = {}
+	groceries = item.split(' ')
+
+	groceries.each do |item| 
+		grocery_list[item] = 1
+	end
+	grocery_list
+end
+
+updated_list = create_list("bananas tomatoes potatoes cheese")
+
 
 # Method to add an item to a list
 # input: item name
@@ -15,6 +30,14 @@
 	# Take item that needs added
 	# Add item to the end of the list
 # output: array
+
+
+def add_item(updated_list, item, quantity)
+	updated_list[item] = quantity
+	updated_list
+end
+
+p add_item(updated_list, "lemonade", 2)
 
 # Method to remove an item from the list
 # input: item that we don't want on our list
@@ -40,3 +63,4 @@
 	# Cycle through the list
 	# Print the list using the template
 # output: strings
+
