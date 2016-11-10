@@ -14,7 +14,7 @@
 
 module Shout
 	def illicit_hollering(words)
-		"#{words}! That makes me wanna shout!!"
+		"#{words}! Ugh! It makes me wanna shout!!"
 	end
 
 	def good_news(words)
@@ -31,5 +31,11 @@ class Women
 	include Shout
 end
 
+timmy = Schoolboys.new
+p timmy.illicit_hollering("That's not fair!")
+p timmy.good_news("A PUPPY?!")
 
 
+stacey = Women.new
+p stacey.illicit_hollering("How could he cheat after 5 years together?")
+p stacey.good_news("You got the promotion?!")
