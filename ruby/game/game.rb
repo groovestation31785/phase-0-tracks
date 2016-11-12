@@ -18,6 +18,8 @@ class WordGuess
 
 end 
 
+# DRIVER CODE
+
 puts "It's time for a guessing game!"
 puts "Player 1, type a word for Player 2 to guess:"
 p1_word = gets.chomp
