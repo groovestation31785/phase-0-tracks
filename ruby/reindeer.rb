@@ -14,9 +14,11 @@ class Reindeer
 
   def land(location)
     puts "#{@name} landed safely in #{location}."
-    @location = location
+    @location = location (global variable is updated by the argument)
   end
 end
+
+# Each instance can have different attributes
 
 reindeer = Reindeer.new("Dasher")
 puts "#{reindeer.name} is in #{reindeer.location}."

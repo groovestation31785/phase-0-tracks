@@ -1,3 +1,5 @@
+# Each instance can have different attributes
+
 class Santa
 	attr_reader :age, :ethnicity # refractored from getter methods
 	attr_accessor :gender # refractored from setter method
