@@ -18,7 +18,7 @@ class Puppy
 	 end
 	   
 	def dog_years(num)
-		num*7
+		num * 7
 	end
 
 	def back_flip
@@ -70,5 +70,4 @@ end
 
 	bird_arr.each { |x| p x.flight }
 
-end
 
