@@ -88,12 +88,12 @@ class VirusPredictor
     nums_check = {200 => 0.5, 150 => 1, 100 => 1.5, 50 => 2}
     speed = 0.0
     nums_check.each do |key, value|
-      
       if @population_density >= key
         speed += value
         break
-       else
+       elsif @population_density < 50
          speed += 2.5
+         break
       end
     end
 
