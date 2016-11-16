@@ -60,19 +60,18 @@ class VirusPredictor
     end
 
 
-=begin
-     if @population_density >= 200
-       number_of_deaths = (@population * 0.4).floor
-     elsif @population_density >= 150
-       number_of_deaths = (@population * 0.3).floor
-     elsif @population_density >= 100
-       number_of_deaths = (@population * 0.2).floor
-     elsif @population_density >= 50
-       number_of_deaths = (@population * 0.1).floor
-     else
-       number_of_deaths = (@population * 0.05).floor
-     end
-=end
+# ORIGINAL 
+#     if @population_density >= 200
+#       number_of_deaths = (@population * 0.4).floor
+#     elsif @population_density >= 150
+#       number_of_deaths = (@population * 0.3).floor
+#     elsif @population_density >= 100
+#       number_of_deaths = (@population * 0.2).floor
+#     elsif @population_density >= 50
+#       number_of_deaths = (@population * 0.1).floor
+#     else
+#       number_of_deaths = (@population * 0.05).floor
+#     end
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
@@ -94,32 +93,30 @@ class VirusPredictor
       if @population_density >= key
         speed += value
         break
-       elsif @population_density < 50
-         speed += 2.5
-         break
+      elsif @population_density < 50
+        speed += 2.5
+        break
       end
     end
 
 
-=begin
-    speed = 0.0
+# ORIGINAL
+#    speed = 0.0
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
-    end
-=end
+#    if @population_density >= 200
+#      speed += 0.5
+#    elsif @population_density >= 150
+#      speed += 1
+#    elsif @population_density >= 100
+#      speed += 1.5
+#    elsif @population_density >= 50
+#      speed += 2
+#    else
+#      speed += 2.5
+#    end
+
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
-
 end
 
 #=======================================================================
@@ -134,25 +131,53 @@ STATE_DATA.each do |key, value|
   state_name.virus_effects
 end
 
-=begin
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+# ORIGINAL DRIVER CODE
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
 
-idaho = VirusPredictor.new("Idaho", STATE_DATA["Idaho"][:population_density], STATE_DATA["Idaho"][:population])
-idaho.virus_effects
-=end
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
 
-# constants
-# symbols (why/how)
+# The STATE_DATA hash uses two different syntaxes. The key values
+# are strings of the states' names folowed by hash rockets. This
+# leads to the values, which are also hashes. In this set of hashes,
+# it uses the JSON syntax and creates the :population_density and 
+# :population symbols.
+
+
+# 'require_relative' creates the pathway to a separate file in relation to itself.
+# You'd use 'require' on code that Ruby knows specifically where to find it 
+# because of its installation protocols. Ruby goes to the source of the 
+# information instead of taking an indirect path.
+
+
+# The most common way to iterate through a hash is way that
+# my pair and I used in the refactoring -- .EACH. This goes through
+# every key/value pair and returns whateve we tell it. There is also
+# .EACH_KEY, .EACH_VALUE, and .EACH_PAIR. The first two iterate through
+# a specific part of the hash: the former, the key; the latter, the value. 
+# .EACH and .EACH_PAIR are the same methods and produce similar outputs.
+
+
+# The 'speed' variable was the only one that saw that
+# I would not have thought of needing. All the other instance
+# variables fit together very well. Adding 'speed' was an important
+# part of the speed_of_spread method. The other variables where
+# pretty straightforward in my opinion.
+
+# Iterating was extremely important for me. Not only creating 
+# them, but also thinking of the iterations the same way that the
+# computer does. For the longest time, the results of our iterations
+# were not matching the original output. Finally when I starting going
+# through each step like the program does, I realized that we were not 
+# translating our logic as well as we had hoped.
