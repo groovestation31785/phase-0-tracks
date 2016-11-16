@@ -4,8 +4,11 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# 
-#
+# 'require_relative' describes the pathway in relation to itself. By calling it,
+# the program can use the information from that file for its own purposes.
+# With 'require', you are given access to many different libraries and code
+# bundles in the Ruby language written by others. 'require' retrieves
+# said bundles once so you can have access to it every time you need it.
 
 require_relative 'state_data'
 
