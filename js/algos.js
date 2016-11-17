@@ -9,3 +9,16 @@
 // Continue comparing each item to the one that has the longest length
 // At the end, return the item with the longest length
 
+function longestPhrase(arr) {
+  var leng = 0;
+  
+  for(var i = 0; i < arr.length; i++ ) {
+    if(arr[i].length > leng) {
+        var leng = arr[i].length;
+        var longest = arr[i];
+    }      
+  } 
+  return longest
+}
+
+console.log(longestPhrase(["elephant", "giraffe", "brontosaurs", "boa constrictor", "A Yeti so huge that you would probably die from the mere size of it."]));
