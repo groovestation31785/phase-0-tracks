@@ -21,7 +21,11 @@ function longestPhrase(arr) {
   return longest
 }
 
-console.log(longestPhrase(["elephant", "giraffe", "brontosaurs", "boa constrictor", "A Yeti so huge that you would probably die from the mere size of it."]));
+// console.log(longestPhrase(["elephant", "giraffe", "brontosaurs", "boa constrictor", "A Yeti so huge that you would probably die from the mere size of it."]));
+// console.log(longestPhrase(["Facebook", "Twitter", "Snapchat", "Pinterest"]));
+// console.log(longestPhrase(["Captain Crunch", "Lucky Charms", "Trix", "Cheerios"]));
+
+
 
 // FIND A KEY-VALUE MATCH
 // Create a program starts with two sets of data
@@ -34,3 +38,25 @@ console.log(longestPhrase(["elephant", "giraffe", "brontosaurs", "boa constricto
 //		- Otherwise:
 //			- Return false (meaning none of the pairs match)
 // Repeat the comparison process as needed to compare all the possible 
+
+function compareObjects(oneObject, twoObject) {
+  var oneValueArray = Object.keys(oneObject);
+  var twoValueArray = Object.keys(twoObject);
+  
+    
+  for (var i = 0; i < oneValueArray.length; i++) {
+    var prop = oneValueArray[i];
+    
+    	if (oneObject[prop] == twoObject[prop]) {
+    	  return true;
+    	} 
+ }
+  	return false;
+}
+	
+
+var jimData = {name: "Jim Halpert", employer: "Dunder Mifflin", occupation: "paper salesman"};
+var kevinData = {name: "Kevin Malone", employer: "Dunder Mifflin", occupation: "accountant"};
+
+
+console.log(compareObjects(jimData, kevinData));
