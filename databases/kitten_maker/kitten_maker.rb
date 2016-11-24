@@ -7,7 +7,10 @@ require 'sqlite3'
 require 'faker'
 
 # create SQLite3 database
+# this is the Ruby equivalent to creating a new SQLite3 database
 db = SQLite3::Database.new("kittens.db")
+# db.execute("SELECT * FROM kittens")
+# ^ this string would would be converted into a SQL command
 db.results_as_hash = true
 
 # learn about fancy string delimiters
