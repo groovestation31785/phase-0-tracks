@@ -1,0 +1,29 @@
+You've joined two tables before. How do you join three?
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+How do you view the data of all three tables for just one particular business? 
+
+
+1.You've joined two tables before. How do you join three?
+
+sqlite> SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+
+1|4|Great wedding, ran out of rice|1|1|1|Bradford|Pitt|1|Grundy Hollow Wedding Chapel
+2|2|Bad beats. No krystal.|2|3|3|Steven|Wonder|2|Beagle Night Club
+3|5|I found my center. Yoga instructer was also totes adorbs|3|2|2|Mandy|Cahling|3|Lotus Yoga
+
+2. There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+sqlite> SELECT users.f_name, users.l_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4|Great wedding, ran out of rice
+Steven|Wonder|Beagle Night Club|2|Bad beats. No krystal.
+Mandy|Cahling|Lotus Yoga|5|I found my center. Yoga instructor was also totes adorbs
+
+
+How do you view the data of all three tables for just one particular business? 
+
+SELECT users.f_name, users.l_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE business_id = 3;
+
+Mandy|Cahling|Lotus Yoga|5|I found my center. Yoga instructer was also totes adorbs
