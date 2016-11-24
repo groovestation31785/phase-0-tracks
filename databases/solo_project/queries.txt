@@ -16,6 +16,7 @@
 2. UPDATE pokemon SET for_battle="true" WHERE name="Mankey";
 (no ouput, but this is the updated row)---> 4|Mankey|28|true|4
 
+
 3. SELECT * FROM pokemon, type WHERE pokemon.type = type.id;
 
 1|Charmander|16|true|1|1|Fire
@@ -29,6 +30,7 @@
 9|Drowzee|26|false|3|3|Psychic
 10|Krabby|28|true|2|2|Water
 11|Horsea|32|true|2|2|Water
+
 
 4.SELECT pokemon.name, type.type_name FROM pokemon JOIN type ON pokemon.type = type.id;
 
@@ -44,6 +46,7 @@ Drowzee|Psychic
 Krabby|Water
 Horsea|Water
 
+
 5. DELETE * FROM pokemon WHERE type=4;
 
 1|Charmander|16|true|1
@@ -55,4 +58,31 @@ Horsea|Water
 9|Drowzee|26|false|3
 10|Krabby|28|true|2
 11|Horsea|32|true|2
+
+
+Release 3: JOINS
+
+SELECT pokemon.name, type.type_name FROM pokemon INNER JOIN type ON pokemon.type = type.id;
+
+Charmander|Fire
+Squirtle|Water
+Psyduck|Water
+Abra|Psychic
+Ponyta|Fire
+Poliwag|Water
+Drowzee|Psychic
+Krabby|Water
+Horsea|Water
+
+SELECT pokemon.name, pokemon.for_battle, type.type_name FROM pokemon LEFT JOIN type ON pokemon.type = type.id;
+
+Charmander|true|Fire
+Squirtle|true|Water
+Psyduck|false|Water
+Abra|true|Psychic
+Ponyta|false|Fire
+Poliwag|true|Water
+Drowzee|false|Psychic
+Krabby|true|Water
+Horsea|true|Water
 
