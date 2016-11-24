@@ -1,0 +1,58 @@
+1. SELECT * FROM pokemon;
+
+1|Charmander|16|true|1
+2|Squirtle|16|true|2
+3|Psyduck|33|false|2
+4|Mankey|28|false|4
+5|Machop|28|false|4
+6|Abra|16|true|3
+7|Ponyta|40|false|1
+8|Poliwag|25|true|2
+9|Drowzee|26|false|3
+10|Krabby|28|true|2
+11|Horsea|32|true|2
+
+
+2. UPDATE pokemon SET for_battle="true" WHERE name="Mankey";
+(no ouput, but this is the updated row)---> 4|Mankey|28|true|4
+
+3. SELECT * FROM pokemon, type WHERE pokemon.type = type.id;
+
+1|Charmander|16|true|1|1|Fire
+2|Squirtle|16|true|2|2|Water
+3|Psyduck|33|false|2|2|Water
+4|Mankey|28|true|4|4|Fighting
+5|Machop|28|false|4|4|Fighting
+6|Abra|16|true|3|3|Psychic
+7|Ponyta|40|false|1|1|Fire
+8|Poliwag|25|true|2|2|Water
+9|Drowzee|26|false|3|3|Psychic
+10|Krabby|28|true|2|2|Water
+11|Horsea|32|true|2|2|Water
+
+4.SELECT pokemon.name, type.type_name FROM pokemon JOIN type ON pokemon.type = type.id;
+
+Charmander|Fire
+Squirtle|Water
+Psyduck|Water
+Mankey|Fighting
+Machop|Fighting
+Abra|Psychic
+Ponyta|Fire
+Poliwag|Water
+Drowzee|Psychic
+Krabby|Water
+Horsea|Water
+
+5. DELETE * FROM pokemon WHERE type=4;
+
+1|Charmander|16|true|1
+2|Squirtle|16|true|2
+3|Psyduck|33|false|2
+6|Abra|16|true|3
+7|Ponyta|40|false|1
+8|Poliwag|25|true|2
+9|Drowzee|26|false|3
+10|Krabby|28|true|2
+11|Horsea|32|true|2
+
