@@ -27,9 +27,9 @@ def create_new_hero(db, name, age, specialty, turing_award)
 end
 
 # Create multiple entries for the list of Silicon Valley's finest
- 100.times do
-  create_new_hero(db, Faker::Name.name, Faker::Number.number(2), Faker::Company.bs, "false")
- end
+# 100.times do
+#  create_new_hero(db, Faker::Name.name, Faker::Number.number(2), Faker::Company.bs, "false")
+# end
 
 
 # Displays the entire list of tech all-stars and their info
@@ -49,6 +49,7 @@ def game_changers(db)
 	end
 end
 
+# Give the Award to people based on their age
 def give_turing_award(db)
 	db.execute("UPDATE tech_heroes SET turing_award = 'true' WHERE age BETWEEN 55 AND 60")
 	winners = db.execute("SELECT name FROM tech_heroes WHERE turing_award = 'true'")
@@ -69,13 +70,14 @@ def retirement(db)
 end
 
 # DRIVER CODE
+
 # tech_heroes_list(db)
 # game_changers(db)
 # give_turing_award(db)
- #retirement(db)
+# retirement(db)
 
 
 
-# There are three things I would have liked to do, but I could not figure out how to make it work
+# There are two things I would have liked to do, but I could not figure out how to make it work. I want to revisit this to see if I could make it work:
 #	- I would prefer to give the Award to the people based on their specialties. For example if a specialty had the prefix "trans-" in the description, "false" would be changed to "true"
-#	- Instead of hard-coding some of the search parameters, how would I take user input and apply it to 
+#	- Instead of hard-coding some of the search parameters, I would take user input and apply it. For example, a user could enter an age and that age would be used in a SQL command to find all people with that age. It would be the same idea if a user wanted to know if any of the specialties was focused on "infrastructures" or "interfaces".
