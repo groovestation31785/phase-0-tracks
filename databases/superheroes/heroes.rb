@@ -13,7 +13,8 @@ heroes_table_cmd = <<-SQL
 		id INTEGER PRIMARY KEY, 
 		name VARCHAR(255),
 		age INTEGER,
-		specialty VARCHAR(255)
+		specialty VARCHAR(255),
+		turing_award BOOLEAN
 		);
 SQL
 
@@ -21,41 +22,60 @@ SQL
 db.execute(heroes_table_cmd)
 
 # Create a new tech hero. This adds a name, age, and specialty
-def create_new_hero(db, name, age, specialty)
-  db.execute("INSERT INTO tech_heroes(name, age, specialty) VALUES (?, ?, ?)", [name, age, specialty])
+def create_new_hero(db, name, age, specialty, turing_award)
+  db.execute("INSERT INTO tech_heroes(name, age, specialty, turing_award) VALUES (?, ?, ?, ?)", [name, age, specialty, turing_award])
 end
 
 # Create multiple entries for the list of Silicon Valley's finest
-# 10.times do
-#   create_new_hero(db, Faker::Name.name, Faker::Number.number(2), Faker::Company.bs)
-# end
+ 100.times do
+  create_new_hero(db, Faker::Name.name, Faker::Number.number(2), Faker::Company.bs, "false")
+ end
 
 
-# This helps us find all the awesome tech heroes by name
-def game_changers(db)
-	fav_hero = db.execute("SELECT name, specialty FROM tech_heroes WHERE name LIKE '") 
-	fav_hero.each do |person|
-		puts "#{person['name']} is working to #{person['specialty']}!"
+# Displays the entire list of tech all-stars and their info
+def tech_heroes_list(db)
+	list = db.execute("SELECT * FROM tech_heroes")
+	list.each do |person|
+		puts "#{person['name']} is #{person['age']} years old whose specialty is to #{person['specialty']}."
 	end
 end
 
 
+# Find all the awesome tech heroes according to their specialty (the longer the specialty description, the more innovative it is)
+def game_changers(db)
+	fav_hero = db.execute("SELECT name, specialty FROM tech_heroes ORDER BY LENGTH(specialty) DESC LIMIT 5") 
+	fav_hero.each do |person|
+		puts "#{person['name']} is taking great strides with working to #{person['specialty']}!"
+	end
+end
+
+def give_turing_award(db)
+	db.execute("UPDATE tech_heroes SET turing_award = 'true' WHERE age BETWEEN 55 AND 60")
+	winners = db.execute("SELECT name FROM tech_heroes WHERE turing_award = 'true'")
+	winners.each do |winner|
+		puts "Congratulations!! #{winner['name']} is the winner of the ACM A.M. Turning Award for outstanding contributions to the computing community!"
+	end
+end
 
 # Some of our heroes are no keeping up with the newer technologies
 # We are going to kindly suggest that they retire
 def retirement(db)
-	retirees = db.execute("UPDATE tech_heroes SET specialty="Enjoying retirement" WHERE age > 70")
-	retirees.each do |name|
-		puts "Thank you for all your years of work, #{name['name']}!!!"
+	db.execute("UPDATE tech_heroes SET specialty = 'Enjoying retirement' WHERE age > 80")
+
+	retirees = db.execute("SELECT name FROM tech_heroes WHERE age > 90")
+	retirees.each do |person|
+		puts "Thank you for all your years of work, #{person['name']}!!!"
 	end
 end
 
 # DRIVER CODE
-find_hero_name(db)
-retirement(db)
+# tech_heroes_list(db)
+# game_changers(db)
+# give_turing_award(db)
+ #retirement(db)
 
 
 
 # There are three things I would have liked to do, but I could not figure out how to make it work
-#	- I wanted to add a Nobel Prize column. Everyone would start with "false" , but later I would give it to the people with specific specialties. For example if a specialty had the prefix "trans-" in the description, "false" would be changed to "true"
-#	- Instead of hard-coding some of the search parameters, how would 
+#	- I would prefer to give the Award to the people based on their specialties. For example if a specialty had the prefix "trans-" in the description, "false" would be changed to "true"
+#	- Instead of hard-coding some of the search parameters, how would I take user input and apply it to 
