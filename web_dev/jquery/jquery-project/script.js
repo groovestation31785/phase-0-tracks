@@ -1,3 +1,5 @@
 $(document).ready(function() {
-   $('ol').sortable(); 
+    $('div').click(function() {
+        $(this).fadeOut('slow');
+    });
 });
