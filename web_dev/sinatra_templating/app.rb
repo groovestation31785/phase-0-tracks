@@ -17,6 +17,16 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/campus' do
+  @campuses = db.execute("SELECT * FROM students") # the @ makes campuses available throughout the template
+  erb :campus
+end
+
+get '/campus/new' do
+  erb :new_campus
+end
+
+
 # create new students with a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
