@@ -9,8 +9,8 @@
     <p>Welcome to the campus management system.</p>
     <p>Click <a href="campus/new">here</a> to create a new campus.</p>
     <ul>
-      <% @campuses.each do |student| %>
-        <li><%= campuses['campus_name'] %></li>
+      <% @campuses.each do |campus| %>
+        <li><%= campus['campus_name'] %></li>
       <% end %>
     </ul>
   </body>
