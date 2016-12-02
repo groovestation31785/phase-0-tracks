@@ -9,16 +9,15 @@ db.results_as_hash = true
 
 # show students on the home page
 get '/' do
-  @students = db.execute("SELECT * FROM students")
-  erb :home
+  @students = db.execute("SELECT * FROM students") # the @ makes students available throughout the template
+  erb :home # this is an erb method taking a symbol as an argument
 end
 
 get '/students/new' do
   erb :new_student
 end
 
-# create new students via
-# a form
+# create new students with a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
