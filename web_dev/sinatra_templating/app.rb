@@ -33,4 +33,10 @@ post '/students' do
   redirect '/'
 end
 
+# post '/campus' do
+#  db.execute("INSERT INTO campuses (campus_name) VALUES (?)", [params['campus_name'])
+#  redirect '/'
+# end
+
+
 # add static resources
