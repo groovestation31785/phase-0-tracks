@@ -7,10 +7,10 @@
   <body>
     <h1>Campus Management System</h1>
     <p>Welcome to the campus management system.</p>
-    <p>Click <a href="campus/new">here</a> to create a new campus.</p>
+    <!-- <p>Click <a href="campus/new">here</a> to create a new campus.</p> -->
     <ul>
-      <% @campuses.each do |campuses| %>
-        <li><%= campuses['campus_name'] %></li>
+      <% @campuses.each do |campus| %>
+        <li><%= campus['campus_name'] %></li>
       <% end %>
     </ul>
   </body>

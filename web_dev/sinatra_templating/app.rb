@@ -22,9 +22,9 @@ get '/campus' do
   erb :campus
 end
 
-get '/campus/new' do
-  erb :new_campus
-end
+# get '/campus/new' do
+#  erb :new_campus
+#  end
 
 
 # create new students with a form
@@ -33,9 +33,11 @@ post '/students' do
   redirect '/'
 end
 
+
+# I tried creating a post option for the form on the new campus page, but the strings would come out empty. I could not figure why that happened.
 # post '/campus' do
-#  db.execute("INSERT INTO campuses (campus_name) VALUES (?)", [params['campus_name'])
-#  redirect '/'
+#  db.execute("INSERT INTO campuses (campus_name) VALUES (?)", [params['campus_name']])
+#  redirect '/campus'
 # end
 
 
