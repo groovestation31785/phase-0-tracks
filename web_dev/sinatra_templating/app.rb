@@ -18,7 +18,7 @@ get '/students/new' do
 end
 
 get '/campus' do
-  @campuses = db.execute("SELECT * FROM students") # the @ makes campuses available throughout the template
+  @campuses = db.execute("SELECT * FROM campuses") # the @ makes campuses available throughout the template
   erb :campus
 end
 
