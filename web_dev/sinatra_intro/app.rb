@@ -9,7 +9,7 @@ db.results_as_hash = true
 # add a query parameter
 # GET /
 get '/' do
-  "#{params[:name]} is #{params[:age]} years old."
+  "#{params[:name]} is #{params[:age]} years old." # The server reads this as HTML
 end
 
 # write a GET route with
@@ -36,6 +36,15 @@ get '/students' do
   end
   response
 end
+
+get '/contact' do
+  "The address is <a href='www.google.com'>www.google.com</a>"
+end
+
+get '/great_job' do
+  "Good job, #{params[:person]}!"
+end
+
 
 # write a GET route that retrieves
 # a particular student
