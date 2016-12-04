@@ -45,6 +45,10 @@ get '/great_job' do
   "Good job, #{params[:person]}!"
 end
 
+get '/add/:first_num/:second_num' do
+  summation = params[:first_num].to_i + params[:second_num].to_i
+  "#{summation}"
+end
 
 # write a GET route that retrieves
 # a particular student
